@@ -67,12 +67,17 @@
 	table {
 		margin-left:auto;
 		margin-right: auto;
-		width:auto;
 		border:3px solid;
         border-collapse: separate;
 		border-style: solid;
 		
-		width:auto
+		width: auto;
+		max-width: fit-content;
+
+		display: block;
+		overflow-x: auto;
+		white-space: nowrap;
+  		
     }
 	th {
 	    border:3px solid;

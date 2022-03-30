@@ -68,10 +68,12 @@
 
 <p>Where do you want to exchange crypto?</p>
 <br/>
-<Map bind:this={mapComponent} button={true}/>
+<div style="width: auto;">
+    <Map bind:this={mapComponent} button={true}/>
+</div>
 <p>
     <input on:change={getCitys} bind:value={inputString}
-           placeholder="...start typing"/>
+           placeholder="...start typing" style="width: fit-content;"/>
 
     {#if places.length !== 0}
         <select bind:value={selectedPlace} on:change={setSelectedPlace}>
