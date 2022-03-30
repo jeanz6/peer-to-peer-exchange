@@ -24,6 +24,7 @@ app.get("/", function (req, res) {
 });
 
 
+// TODO
 async function handle_password_check() {   
     check_if_password_exists("WMVzKVQNhf").then((result:any) => {
         console.log("result= " + result["rows"]); 

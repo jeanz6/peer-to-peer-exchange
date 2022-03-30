@@ -70,7 +70,7 @@
     } 
 </script>
 
-<h2>Place your offer/purchase request!</h2>
+<h2>Select what you want to do!</h2>
 
 
 {#if isSuccessVisible}
@@ -85,9 +85,9 @@
             <table>
                 <tr>
                     <th><input type="radio" id="offer" name="offerOrPurchase" bind:group={kindOfOffer} value={1}>
-                        <label for="offer">offer</label><br></th>
+                        <label for="offer">Sell Crypto</label><br></th>
                     <th><input type="radio" id="purchase" name="offerOrPurchase" bind:group={kindOfOffer} value={2}>
-                        <label for="purchase">purchase </label><br>
+                        <label for="purchase">Buy Crypto</label><br>
                     </th>
                 </tr>
             </table>
