@@ -1,5 +1,23 @@
 # Peer To Peer Exchange
-This project enables crypto enthusiasts to buy and sell cryptocurrency without traceability
+
+This project provides a website for everyone to buy and sell Cryptocurrency in a peer to peer way.
+The Users won't be tracked. The only information they provide to the website is their telegram username. 
+
+When creating an entry on the website the information will be sent to the backend and saved in a MySQL database. 
+
+## Database tables
+
+### ```buyers```
+
+| idbuyers | pair | amount | location | contact | password |
+| --- | --- | --- |--- | --- | --- |
+| int | string | float | string | string | string |
+
+### ```sellers```
+
+| idsellers | pair | amount | location | contact | password |
+| --- | --- | --- |--- | --- | --- |
+| int | string | float | string | string | string |
 
 ## client-with-snel
 
@@ -18,7 +36,7 @@ The deno backend should be connected to a MySQL database.
 
 `deno run --allow-net --allow-read .\server.ts`
 
-## client-with-nodejs
+## Where to reach the server
 
-Peer 2 Peer Exchange frontend working with nodejs and svelte
+TODO: Publish website
 
