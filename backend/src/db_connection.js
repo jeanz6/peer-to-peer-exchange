@@ -6,9 +6,9 @@ import { DATABASE, TABLE } from "./config.ts";
 // TODO: Give db password through environement
 const client = await new Client().connect({
   hostname: "127.0.0.1",
-  username: "root",
-  db: "peer2peer",
-  password: "Dasist1Root",
+  username: "profi",
+  db: "p2pexchange",
+  password: "p2p",
 });
 
 

@@ -1,0 +1,25 @@
+version: '3.3'
+
+services:
+
+  p2pdb:
+    build:
+      context: .
+      dockerfile: dev.dockerfile
+    image: mariadb:10.5
+    restart: always
+    command: --transaction-isolation=READ-COMMITTED --binlog-format=ROW
+    volumes:
+      - ./db/:/var/lib/mysql
+    environment:
+      - MYSQL_ROOT_PASSWORD=akhd2010root#
+      - MYSQL_PASSWORD=p2p
+      - MYSQL_DATABASE=p2pexchange
+      - MYSQL_USER=profi
+    networks:
+      - default
+    ports:
+     - 3306:3306
+       # first host then container
+      #expose:
+      #- 3306
