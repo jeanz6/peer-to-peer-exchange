@@ -5,7 +5,7 @@ services:
   p2pdb:
     build:
       context: .
-      dockerfile: dev.dockerfile
+      dockerfile: db.Dockerfile
     image: mariadb:10.5
     restart: always
     command: --transaction-isolation=READ-COMMITTED --binlog-format=ROW
@@ -23,3 +23,13 @@ services:
        # first host then container
       #expose:
       #- 3306
+  deno-srv:
+    build:
+      context: .
+      dockerfile: deno.Dockerfile
+    image: denoland/deno:ubuntu-1.17.3
+    ports:
+    - 443:443
+networks:
+  web_network:
+    driver: bridge

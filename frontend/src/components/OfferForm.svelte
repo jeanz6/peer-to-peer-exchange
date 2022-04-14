@@ -48,7 +48,7 @@
         }
         */
 
-        const res = await fetch('http://127.0.0.1:3000/addUser', {
+        const res = await fetch('https://jw-lab.physi.uni-heidelberg.de/addUser', {
             headers: {'Content-Type': 'application/json'},
             method: 'POST',
             // body: JSON.stringify({"abc": {location}})

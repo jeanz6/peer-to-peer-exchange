@@ -10,6 +10,11 @@ import { cryptoRandomString } from "https://deno.land/x/crypto_random_string@1.1
 
 // TODO: Tidy up imports
 
+
+//let std_listener = std::net::TcpListener::bind(&addr)
+//    .expect(&format!("Can't bind to {}", addr));
+
+
 const app = opine();
 const pathToAssets = `${Deno.cwd()}/public`
 const pathToIndexHTML = `${pathToAssets}/index.html`
@@ -101,9 +106,31 @@ app.post("/queryUsers", async function (req, res) {
 })
 
 
-const port = 3000
+//const port = 3000
 
-app.listen(
-    port,
-    () => console.log(`server has started on http://localhost:${port} 🚀`),
-);
+if (Deno.args[0] === '443') {
+
+    // const cert = await Deno.readTextFile(`/etc/letsencrypt/live/openforce.de/fullchain.pem`)
+    // const key = await Deno.readTextFile(`/etc/letsencrypt/live/openforce.de/privkey.pem`)
+
+    const options = {
+        port: Number(Deno.args[0]),
+        certFile: "root/fullchain.pem",
+        keyFile: "root/privkey.pem"
+    }
+
+
+    app.listen(options, () => console.log(`server has started on http://localhost:${Deno.args[0]} 🚀`))
+
+} else {
+
+    // mongodbConnectionString = `mongodb://${mongoUser}:${mongoPW}@localhost:27017`
+    app.listen(Number(Deno.args[0]), () => console.log(`server has started on http://localhost:${Deno.args[0]} 🚀`))
+
+}
+
+
+//app.listen(
+//    port,
+//    () => console.log(`server has started on http://localhost:${port} 🚀`),
+//);
